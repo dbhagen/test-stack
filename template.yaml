@@ -44,6 +44,9 @@ Resources:
                 type: aws_proxy
                 uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${function61D00F31.Arn}/invocations
               responses: {}
+          /about:
+            get:
+              responses: {}
       EndpointConfiguration: REGIONAL
   function8E6C5467:
     Type: AWS::Serverless::Function
@@ -119,7 +122,7 @@ Parameters:
     Description: Environment name used for API Gateway Stage names (injected by Stackery at deployment time)
   StackeryDeploymentTimestamp:
     Type: Number
-    Description: Timestamp (injected by Stackery at deployment time)
+    Description: Deployment preparation timestamp in milliseconds Since Epoch (injected by Stackery at deployment time)
 Metadata:
   StackeryErrorsTargets:
     function8E6C5467: {}
